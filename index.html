@@ -42,6 +42,7 @@
     .non {
       background-color: lightgray;
       position: absolute;
+      transition: transform 0.4s ease-out;
     }
 
     /* 💕 Cœurs */
@@ -79,9 +80,9 @@
 
     // Bouton non qui bouge
     const non = document.getElementById("non");
-    non.addEventListener("mouseover", () => {
-      const x = Math.random() * 200 - 100;
-      const y = Math.random() * 200 - 100;
+    non.addEventListener("mouseenter", () => {
+      const x = (Math.random() - 0.5) * 300;
+      const y = (Math.random() - 0.5) - 200;
       non.style.transform = `translate(${x}px, ${y}px)`;
     });
 
