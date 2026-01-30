@@ -27,23 +27,10 @@
       height: 240px;
       z-index: 2;
       box-shadow: 0 12px 25px rgba(0,0,0,0.2);
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      align-items: center;
     }
 
     h2 {
-      margin-bottom: 10px;
-    }
-
-    /* Conteneur pour les boutons */
-    .buttons {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 20px; /* Espace entre Oui et Non */
-      position: relative; /* nécessaire pour position absolute du Non */
+      margin-bottom: 20px;
     }
 
     button {
@@ -52,17 +39,19 @@
       border-radius: 10px;
       border: none;
       cursor: pointer;
+      margin: 10px;
     }
 
     .oui {
       background-color: #ff4d6d;
       color: white;
-      margin-top: 20px;
     }
 
     .non {
       background-color: #ddd;
-      position: absolute; /* permet le mouvement fluide */
+      position: absolute; /* bouton fuyant */
+      left: 110px;
+      top: 140px;
       transition: left 0.45s ease, top 0.45s ease;
     }
 
@@ -89,10 +78,8 @@
 
   <div class="card" id="card">
     <h2>Veux-tu être ma Valentine ? 💘</h2>
-    <div class="buttons">
-      <button class="oui" onclick="oui()">Oui 💖</button>
-      <button class="non" id="non">Non 😅</button>
-    </div>
+    <button class="oui" onclick="oui()">Oui 💖</button>
+    <button class="non" id="non">Non 😅</button>
   </div>
 
   <script>
