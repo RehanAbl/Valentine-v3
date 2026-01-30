@@ -23,27 +23,10 @@
       border-radius: 16px;
       text-align: center;
       position: relative;
-      width: 340px;
-      height: 240px;
+      width: 320px;
+      height: 220px;
       z-index: 2;
       box-shadow: 0 12px 25px rgba(0,0,0,0.2);
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    h2 {
-      margin-bottom: 10px;
-    }
-
-    /* Conteneur pour les boutons */
-    .buttons {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 20px; /* Espace entre Oui et Non */
-      position: relative; /* nécessaire pour position absolute du Non */
     }
 
     button {
@@ -57,12 +40,17 @@
     .oui {
       background-color: #ff4d6d;
       color: white;
+      margin-top: 20px;
     }
 
     .non {
       background-color: #ddd;
-      position: absolute; /* permet le mouvement fluide */
-      transition: left 0.45s ease, top 0.45s ease;
+      position: absolute;
+      left: 110px;
+      top: 140px;
+      transition:
+        left 0.45s ease,
+        top 0.45s ease;
     }
 
     /* 💕 Emojis cœur animés */
@@ -88,10 +76,8 @@
 
   <div class="card" id="card">
     <h2>Veux-tu être ma Valentine ? 💘</h2>
-    <div class="buttons">
-      <button class="oui" onclick="oui()">Oui 💖</button>
-      <button class="non" id="non">Non 😅</button>
-    </div>
+    <button class="oui" onclick="oui()">Oui 💖</button>
+    <button class="non" id="non">Non 😅</button>
   </div>
 
   <script>
@@ -100,18 +86,14 @@
     const card = document.getElementById("card");
 
     non.addEventListener("mouseenter", () => {
-      const btnRect = non.getBoundingClientRect();
       const cardRect = card.getBoundingClientRect();
+      const btnRect = non.getBoundingClientRect();
 
-      const maxX = cardRect.width - btnRect.width - 10;
-      const maxY = cardRect.height - btnRect.height - 10;
+      const maxX = cardRect.width - btnRect.width - 20;
+      const maxY = cardRect.height - btnRect.height - 20;
 
-      // Déplacement relatif à la carte
-      const x = Math.random() * maxX;
-      const y = Math.random() * maxY;
-
-      non.style.left = x + "px";
-      non.style.top = y + "px";
+      non.style.left = Math.random() * maxX + "px";
+      non.style.top = Math.random() * maxY + "px";
     });
 
     /* 💗 Animation du fond avec des cœurs */
@@ -132,10 +114,9 @@
 
     setInterval(createHeart, 350);
 
-    /* Message final */
     function oui() {
       document.body.innerHTML = `
-        <div style="text-align:center;font-size:22px;color:#ff4d6d;padding:40px;">
+        <div style="text-align:center;font-size:22px;color:#ff4d6d;">
           💕<br><br>
           Tu rendra cette journée quasi parfaite,<br>
           il me faudra peut être un câlin pour qu’elle le devienne 💗
