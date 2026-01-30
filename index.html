@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Ma Valentine 💘</title>
+  <style>
+    body {
+      background: pink;
+      font-family: Arial, sans-serif;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .card {
+      background: white;
+      padding: 30px;
+      border-radius: 15px;
+      text-align: center;
+    }
+    button {
+      padding: 10px 20px;
+      margin: 10px;
+      font-size: 16px;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+    }
+    .oui {
+      background-color: #ff4d6d;
+      color: white;
+    }
+    .non {
+      background-color: lightgray;
+    }
+    #message {
+      margin-top: 15px;
+      color: red;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <h2>Veux-tu être ma Valentine ? 💘</h2>
+    <button class="oui" onclick="oui()">Oui 💖</button>
+    <button class="non" onclick="non()">Non 😅</button>
+    <div id="message"></div>
+  </div>
+
+  <script>
+    function oui() {
+      document.body.innerHTML =
+        "<h1 style='text-align:center;'>Yesss 💕🥰</h1>";
+    }
+
+    function non() {
+      document.getElementById("message").innerText =
+        "Allez… réessaie 😏💘";
+    }
+  </script>
+
+</body>
+</html>
