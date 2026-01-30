@@ -33,25 +33,33 @@
       margin-bottom: 20px;
     }
 
+    /* Conteneur pour les boutons pour gérer l'espace */
+    .buttons-container {
+      position: relative;
+      height: 60px; /* hauteur du conteneur pour les boutons */
+    }
+
     button {
       padding: 12px 22px;
       font-size: 16px;
       border-radius: 10px;
       border: none;
       cursor: pointer;
-      margin: 10px;
     }
 
     .oui {
       background-color: #ff4d6d;
       color: white;
+      position: absolute;
+      left: 40px; /* décalage à gauche */
+      top: 10px;
     }
 
     .non {
       background-color: #ddd;
-      position: absolute; /* bouton fuyant */
-      left: 110px;
-      top: 140px;
+      position: absolute;
+      left: 180px; /* décalage initial à droite */
+      top: 10px;
       transition: left 0.45s ease, top 0.45s ease;
     }
 
@@ -78,8 +86,10 @@
 
   <div class="card" id="card">
     <h2>Veux-tu être ma Valentine ? 💘</h2>
-    <button class="oui" onclick="oui()">Oui 💖</button>
-    <button class="non" id="non">Non 😅</button>
+    <div class="buttons-container">
+      <button class="oui" onclick="oui()">Oui 💖</button>
+      <button class="non" id="non">Non 😅</button>
+    </div>
   </div>
 
   <script>
